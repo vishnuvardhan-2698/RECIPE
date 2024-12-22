@@ -1,0 +1,223 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    /* background-color: #2b1d0f; 2b1d0f */
+    background-color: #ffff;
+    color: #070606;
+}
+
+/* Header Navigation */
+header nav{
+    background-color: #212121;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+
+header nav h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    
+}
+
+header nav form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input[type="text"] {
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    flex-grow: 1;
+}
+
+form button[type="submit"] {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f44336;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+form button[type="submit"]:hover {
+    background-color: #ff5c5c;
+}
+
+/* Recipe Container */
+.recipe-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.recipe {
+    background-color: #fff;
+    color: #000;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.recipe:hover {
+    transform: scale(1.05);
+}
+
+.recipe img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.recipe h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.recipe p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.recipe span {
+    font-weight: bold;
+    color: #f44336;
+}
+
+.recipe button {
+    margin: 15px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.recipe button:hover {
+    background-color: #ff5c5c;
+}
+
+/* Recipe Details Popup */
+.recipe-details {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #694c2f;
+    color: #fff;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    max-height: 80%;
+}
+
+.recipe-details-content {
+    text-align: left;
+}
+
+.recipe-details img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.recipeName {
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.ingredientsList {
+    list-style-type: none;
+    margin: 10px 0;
+    padding-left: 0;
+}
+
+.ingredientsList li {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.recipeInstructions {
+    margin-top: 20px;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+.recipe-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.recipe-close-btn:hover {
+    background-color: #ff5c5c;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 600px) {
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav form {
+        width: 100%;
+    }
+
+    .recipe-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .recipe-details {
+        width: 100%;
+        height: auto;
+        max-height: 90%;
+    }
+}
